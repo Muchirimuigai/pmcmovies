@@ -29,7 +29,7 @@ header ::before{
     z-index: -1;
 }
 header ::after{
-    content: '';git
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
