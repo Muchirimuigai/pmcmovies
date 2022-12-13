@@ -193,4 +193,18 @@
     "low": "video/spiderman 480ph.mp4",
     "medium": "video/spiderman 720ph.mp4",
     "high": "video/spiderman 1080ph.mp4"
-}]
+}, {
+    "name": "Game of thrones",
+    "imdb": 9.9,
+    "date": "2013",
+    "sposter": "img/game-of-thrones-1.jpg",
+    "bposter": "img/game-of-thrones-2.jpeg",
+    "genre": "Action",
+    "type": "movie",
+    "url": "got.html",
+    "trailer": "john wick trailer.mp4",
+    "low": "video/spiderman 480ph.mp4",
+    "medium": "video/spiderman 720ph.mp4",
+    "high": "video/spiderman 1080ph.mp4"
+}
+]
