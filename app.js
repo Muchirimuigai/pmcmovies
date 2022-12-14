@@ -83,6 +83,7 @@ const searchmovies = async searchText => {
 
     if(searchText.length === 0){
         matches = [];
+        match_list.innerHTML = '';
     }
     outputHtml(matches);
 };
@@ -91,7 +92,7 @@ const searchmovies = async searchText => {
 const outputHtml = matches => {
     if(matches.length > 0){
         const html = matches.map(match => `
-        <img src=${match.sposter} alt="">
+        <img src="${match.sposter}" alt="">
         <div class="content2">
             <h6>${match.name}</h6>
             <p>${match.date}</p>
