@@ -28,8 +28,8 @@ header::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('img/got.jpg')no-repeat center center/cover;
-    opacity: .6;
+    background: url('img/money\ heist1.jpg')no-repeat center center/cover;
+    opacity: .4;
     z-index: -1;
 }
 header::after {
@@ -68,7 +68,7 @@ header nav {
 } */
 
 .logo, .end_bv{
-border: 1px solid white;
+/* border: 1px solid white; */
 display: flex;
 align-items: center;
 justify-content: center;
@@ -87,12 +87,11 @@ header nav .end_bv ul{
 }
 header nav .end_bv ul li{
     padding: 3px 15px;
-    margin: 0px 30px;
     }
 
 header nav .end_bv li a{
   text-decoration: none;
-  color: gray;
+  color: rgb(255, 255, 255);
   font-size: 14px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
@@ -100,12 +99,12 @@ header nav .end_bv li a{
 }
 
 header nav .end_bv li a:hover{
-   color: white;
+   color: rgb(122, 119, 119);
 
 
   }
   header nav .end_bv .search {
-    /* position: relative; */
+    position: relative; 
     display: flex;
     align-items: center;
     /* justify-content: center; */
@@ -120,7 +119,7 @@ header nav .end_bv li a:hover{
     border: none;
     background: transparent;
     color: #ffff;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     transition: 1s linear;
     -webkit-transition: 1s linear;
   }
@@ -136,6 +135,57 @@ header nav .end_bv li a:hover{
  color: white;
   }
 
+  
+  header nav .end_bv .search .search_bx2{
+   width: 200px;
+   height: 300px;
+   border: 1px solid white;
+   position: absolute;
+   top: 35px;
+   left: -10px;
+   background: rgb(184, 184, 183, .3);
+   border-radius: 10px;
+  }
+
+  header nav .end_bv .search .search_bx2 a{
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  transition: .3s linear;
+  }
+  header nav .end_bv .search .search_bx2 a:hover {
+   color: rgba(205, 201, 201, .6);
+   }
+
+
+  header nav .end_bv .search .search_bx2 a img{
+   width: 30px;
+   height: 45px;
+   border-radius: 5px;
+   margin: opx 5px;
+  }
+  header nav .end_bv .search .search_bx2 a .content2{
+   color: white;
+  }
+
+  header nav .end_bv .search .search_bx2 a .content2 h6{
+   font-size: 13px;
+  }
+
+  header nav .end_bv .search .search_bx2 a .content2 p{
+   color: rgb(203, 199, 199);
+   font-size: 11px;
+
+  }
+
+
+
+
+
 
   /* javascript */
 
@@ -145,6 +195,28 @@ header nav .end_bv li a:hover{
   }
 
 /* javascript ends  */
+header nav .end_bv .bell{
+   color: rgb(146, 141, 141);
+   font-size: 14px;
+   cursor: pointer;
+   transition: .3s linear;
+   margin:0px 35px;
+}
+header nav .end_bv .bell:hover{
+   color: white;
+}
+header nav .end_bv .user{
+   width: 30px;
+   height: 30px;
+   border: 1px white;
+   border-radius: 50%;
+}
+
+header nav .end_bv .user img{
+   width: 100%;
+   height: 100%;
+   border: 0%;
+}
 
 
 

@@ -1,10 +1,12 @@
 let left_btn = document.getElementsByClassName('bi-chevron-left')[0];
 let right_btn = document.getElementsByClassName('bi-chevron-right')[0];
 let cards = document.getElementsByClassName('cards')[0];
-// let search = document.getElementsByClassName('search')[0];
-let search = document.getElementById('search');
+// let search_bx2 = document.getElementsByClassName('search_bx2')[0];
+
 let search_icon = document.getElementById('search_icon');
 let search_input = document.getElementById('search_input');
+const match_list =document.getElementById('match_list');
+const search = document.getElementById('search');
 
 
 left_btn.addEventListener('click', ()=>{
@@ -63,31 +65,42 @@ data.forEach(element =>{
     search.appendChild(card);
 
 });
-// // search filter 
-// search_input.addEventListener('keyup', ()=> {
-//     let filter = search_input.value.toUpperCase();
-//     let a = search.getElementsByTagName('a');
-//     for(let index = 0; index < a.length; index++){
-//         let b = a[index].getElementsByClassName('cont')[0];
-//         let TextValue = b.textContent || b.innerText;
-//         if (TextValue.toUpperCase().indexOf(filter) > -1) {
-//             a[index].style.display = "flex";
-//             search.style.visibility = "visible";
-//             search.style.opacity = 1;
-//         } else {
-//             a[index].style.display = "none";
-//         }
-//         if (search_input.value == 0) {
-//             search.style.visibility = "visible";
-//             search.style.opacity = 0;  
-            
-//         }
-
-//     }
-
-//  })
+ 
 search_icon.addEventListener('click', () =>{
     search.classList.toggle('search_input')
-})
+});
+
+// // search movie and filter
+const searchmovies = async searchText => {
+    const res = await fetch('../movie.json');
+    const movies = await res.json();
+
+    // get matches to current input
+    let matches = movies.filter(movie => {
+        const regex = new RegExp(`^${searchText}`, 'gi');
+        return movie.name.match(regex);
+    });
+
+    if(searchText.length === 0){
+        matches = [];
+    }
+    outputHtml(matches);
+};
+
+// show result 
+const outputHtml = matches => {
+    if(matches.length > 0){
+        const html = matches.map(match => `
+        <img src=${match.sposter} alt="">
+        <div class="content2">
+            <h6>${match.name}</h6>
+            <p>${match.date}</p>
+        </div>
+        `).join('');
+        match_list.innerHTML = html;
+    }
+}
+
+search.addEventListener('input', () => searchmovies(search.value))
 
 });
