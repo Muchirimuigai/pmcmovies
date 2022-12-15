@@ -1,7 +1,7 @@
 let left_btn = document.getElementsByClassName('bi-chevron-left')[0];
 let right_btn = document.getElementsByClassName('bi-chevron-right')[0];
 let cards = document.getElementsByClassName('cards')[0];
-// let search_bx2 = document.getElementsByClassName('search_bx2')[0];
+let search_bx2 = document.getElementsByClassName('search_bx2')[0];
 
 let search_icon = document.getElementById('search_icon');
 let search_input = document.getElementById('search_input');
@@ -65,6 +65,12 @@ data.forEach(element =>{
     search.appendChild(card);
 
 });
+
+// window.addEventListener('load', () => {
+// movies.forEach(element => {
+
+// })
+// });
  
 search_icon.addEventListener('click', () =>{
     search.classList.toggle('search_input')
@@ -84,15 +90,19 @@ const searchmovies = async searchText => {
     if(searchText.length === 0){
         matches = [];
         match_list.innerHTML = '';
+        search_bx2.style.visibility = "hidden";
+        search_bx2.style.opacity = 0;
     }
     outputHtml(matches);
 };
 
-// show result 
+// show result  // <img src="${match.sposter}" alt="">
 const outputHtml = matches => {
     if(matches.length > 0){
+        search_bx2.style.visibility = "visible";
+        search_bx2.style.opacity = 0;
         const html = matches.map(match => `
-        <img src="${match.sposter}" alt="">
+       
         <div class="content2">
             <h6>${match.name}</h6>
             <p>${match.date}</p>
